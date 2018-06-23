@@ -6,9 +6,14 @@ Get artifacts from CircleCI
 
 ## Usage
 
-Download all artifacts to current directory
+Download all artifacts to current directory.
 ```console
 $ golem -vcs github -user ushios -repository golem -branch master
+```
+
+Get private repository's artifacts using token (using `-token` option).
+```console
+$ golem -token xxxxxxxx -vcs github -user ushios -repository golem -branch master
 ```
 
 ### options
