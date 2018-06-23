@@ -6,8 +6,10 @@ import (
 	"log"
 	"os"
 	"path"
+	"path/filepath"
 	"strings"
 
+	"github.com/pkg/errors"
 	"github.com/ushios/golem"
 )
 
@@ -42,8 +44,8 @@ func main() {
 
 	for _, a := range artifacts {
 		if strings.HasPrefix(a.Path(), *prefix) {
-			log.Println(a.Path())
-			body, err := client.GetArtifact(a, *output)
+
+			body, err := client.GetArtifact(a)
 			if err != nil {
 				log.Fatalf("faild to get artifact: %s", err)
 			}
@@ -56,6 +58,11 @@ func main() {
 
 			p := path.Join(*output, a.Path())
 			log.Println("save to:", p)
+
+			if err := createDirectory(p); err != nil {
+				log.Fatalf("faild to create directory: %s", err)
+			}
+
 			file, err := os.OpenFile(p, os.O_WRONLY|os.O_CREATE, 0666)
 			if err != nil {
 				log.Fatalf("faild to create file: %s", err)
@@ -66,4 +73,14 @@ func main() {
 			}
 		}
 	}
+}
+
+func createDirectory(path string) error {
+	dir := filepath.Dir(path)
+	if _, err := os.Stat(dir); os.IsNotExist(err) {
+		if err := os.MkdirAll(dir, 0750); err != nil {
+			return errors.Wrap(err, "faild to create directory")
+		}
+	}
+	return nil
 }

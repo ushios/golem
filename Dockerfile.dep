@@ -1,0 +1,13 @@
+FROM golang:1-alpine
+LABEL maintainer "UshioShugo<ushio.s@gmail.com>"
+
+ENV APP_PATH=${GOPATH}/src/github.com/ushios/golem
+
+RUN apk add --no-cache --virtual .dep \
+	git openssh-client && \
+	go get -u github.com/golang/dep/cmd/dep
+
+WORKDIR ${APP_PATH}
+
+ENTRYPOINT ["dep"]
+CMD ["ensure", "-v"]

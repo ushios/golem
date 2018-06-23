@@ -5,7 +5,6 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"os"
 
 	circleci "github.com/jszwedko/go-circleci"
 	"github.com/pkg/errors"
@@ -78,17 +77,11 @@ func (c *goCircleCIClient) ListArtifacts(v VersionControlSystem, acc, repo strin
 	return res, nil
 }
 
-func (c *goCircleCIClient) GetArtifact(a Artifact, output string) (io.ReadCloser, error) {
+func (c *goCircleCIClient) GetArtifact(a Artifact) (io.ReadCloser, error) {
 	u := a.URL()
 	q := u.Query()
 	q.Add("circle-token", c.client.Token)
 	u.RawQuery = q.Encode()
-
-	if _, err := os.Stat(output); os.IsNotExist(err) {
-		if err := os.MkdirAll(output, 0750); err != nil {
-			return nil, errors.Wrap(err, fmt.Sprintf("faild to create directory %s ", output))
-		}
-	}
 
 	resp, err := http.Get(u.String())
 	if err != nil {
