@@ -1,9 +1,9 @@
 version: '3'
 services:
-  build-golem:
+  golem-build:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.build
     volumes:
       - .:/go/src/github.com/ushios/golem
   dep:
