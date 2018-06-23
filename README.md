@@ -4,16 +4,25 @@
 
 Get artifacts from CircleCI
 
+## Usage
+
+Download all artifacts to current directory
+```console
+$ golem -vcs github -user ushios -repository golem -branch master
+```
+
+
+
 ## Development
 
 Get dependencies.
 
 ```console
-make dep
+$ make dep
 ```
 
 Testing
 
 ```console
-make test
+$ make test
 ```
