@@ -19,6 +19,9 @@ jobs:
           command: |
             make build
       - run:
+          name: docker build test
+            docker build .
+      - run:
           name: test
           command: |
             make test

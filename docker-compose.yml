@@ -1,6 +1,6 @@
 version: '3'
 services:
-  golem:
+  golem-build:
     build:
       context: .
       dockerfile: Dockerfile.build
