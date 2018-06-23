@@ -35,7 +35,38 @@ Usage of /usr/local/bin/golem:
   -vcs string
     	github or bitbucket (default "github")
 ```
+### Using docker
 
+Using docker run command.
+```console
+$ docker run ushios/golem -vcs github -user ushios -repository golem -branch master
+```
+
+### Using docker-compose
+
+Create file like a below.
+```yml
+version: '3'
+services:
+  golem:
+    image: ushios/golem
+    volumes:
+      - .:/out
+    command: [
+      "-prefix", "cinemastorage.proto",
+      "-output", "/out",
+      "-vcs", "github",
+      "-user", "ushios",
+      "-repository", "golem",
+      "-branch", "master",
+      "-token", "xxxxxxxxxx"
+    ]
+```
+
+And execute this command.
+```console
+$ docker-compose run --rm golem
+```
 
 ## Development
 
