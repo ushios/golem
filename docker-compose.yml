@@ -3,7 +3,7 @@ services:
   golem:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.build
     volumes:
       - .:/go/src/github.com/ushios/golem
   dep:
