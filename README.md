@@ -1,17 +1,17 @@
 # golem
+
 Get artifacts from CircleCI
 
-
-# Development
+## Development
 
 Get dependencies.
 
 ```console
-$ make dep
+make dep
 ```
 
 Testing
 
 ```console
-$ make test
+make test
 ```
