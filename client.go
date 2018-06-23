@@ -11,7 +11,7 @@ import (
 type Client interface {
 	GetLatestSucceededBuildNum(v VersionControlSystem, acc, repo, branch string) (int, error)
 	ListArtifacts(v VersionControlSystem, acc, repo string, buildNum int) ([]Artifact, error)
-	GetArtifact(a Artifact, output string) (io.ReadCloser, error)
+	GetArtifact(a Artifact) (io.ReadCloser, error)
 }
 
 // Artifact .
