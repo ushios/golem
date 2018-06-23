@@ -9,7 +9,10 @@ RUN apk add --no-cache --virtual .dep \
 
 WORKDIR ${APP_PATH}
 
+
 FROM alpine
+RUN apk add --no-cache \
+	ca-certificates
 COPY --from=build /go/bin/golem /usr/local/bin/golem
 ENTRYPOINT ["/usr/local/bin/golem"]
 CMD ["-help"]
