@@ -10,8 +10,8 @@ var (
 )
 
 const (
-	Github    VersionControlSystem = "gh"
-	BitBucket VersionControlSystem = "bb"
+	Github    VersionControlSystem = "github"
+	BitBucket VersionControlSystem = "bitbucket"
 )
 
 type VersionControlSystem string
