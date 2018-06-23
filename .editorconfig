@@ -40,3 +40,4 @@ indent_size = 8
 
 [Dockerfile*]
 indent_style = tab
+indent_size = 4

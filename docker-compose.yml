@@ -1,0 +1,14 @@
+version: '3'
+services:
+  build-golem:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/go/src/github.com/ushios/golem
+  dep:
+    build:
+      context: .
+      dockerfile: Dockerfile.dep
+    volumes:
+      - .:/go/src/github.com/ushios/golem
