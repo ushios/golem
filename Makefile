@@ -7,3 +7,6 @@ test:
 
 dep:
 	docker-compose run --rm dep
+
+docker:
+	docker build -t golem .

@@ -40,13 +40,16 @@ Usage of /usr/local/bin/golem:
 ## Development
 
 Get dependencies.
-
 ```console
 $ make dep
 ```
 
 Testing
-
 ```console
 $ make test
+```
+
+Build `Dockerfile` for docker hub
+```console
+$ make docker
 ```
