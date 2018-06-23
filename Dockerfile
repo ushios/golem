@@ -5,7 +5,7 @@ ENV APP_PATH=${GOPATH}/src/github.com/ushios/golem
 
 RUN apk add --no-cache --virtual .dep \
 	git openssh-client && \
-	go get -u github.com/ushios/golem
+	go get github.com/ushios/golem/...
 
 WORKDIR ${APP_PATH}
 
