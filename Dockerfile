@@ -8,3 +8,7 @@ ENV APP_PATH=${GOPATH}/src/github.com/ushios/golem
 COPY . ${APP_PATH}
 WORKDIR ${APP_PATH}
 
+RUN go install ./...
+
+ENTRYPOINT ["/go/bin/golem"]
+CMD ["-help"]
