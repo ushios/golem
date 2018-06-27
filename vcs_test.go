@@ -1,6 +1,8 @@
 package golem
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestNewVersionControlSystemFromString(t *testing.T) {
 	table := []struct {
@@ -33,6 +35,11 @@ func TestNewVersionControlSystemFromString(t *testing.T) {
 			err:    nil,
 			result: Github,
 		},
+		{
+			s:      "gitlab",
+			err:    ErrVersionControlSystemNotFound,
+			result: Github,
+		},
 	}
 
 	for _, row := range table {
@@ -46,4 +53,30 @@ func TestNewVersionControlSystemFromString(t *testing.T) {
 		}
 	}
 
+}
+
+func TestVersionControlSystem_String(t *testing.T) {
+	tests := []struct {
+		name string
+		v    VersionControlSystem
+		want string
+	}{
+		{
+			name: "gtihub",
+			v:    Github,
+			want: "github",
+		},
+		{
+			name: "bitbucket",
+			v:    BitBucket,
+			want: "bitbucket",
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := tt.v.String(); got != tt.want {
+				t.Errorf("VersionControlSystem.String() = %v, want %v", got, tt.want)
+			}
+		})
+	}
 }
