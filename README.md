@@ -1,6 +1,6 @@
 # golem
 
-[![GoDoc](https://godoc.org/github.com/ushios/golem?status.svg)](https://godoc.org/github.com/ushios/golem) [![CircleCI](https://circleci.com/gh/ushios/golem.svg?style=shield&circle-token=16878b14f171b0cd807f1ca57bde0fd6564ea1c5)](https://circleci.com/gh/ushios/golem) [![](https://dockerbuildbadges.quelltext.eu/status.svg?organization=ushios&repository=golem)](https://hub.docker.com/r/ushios/golem/builds/) [![Go Report Card](https://goreportcard.com/badge/github.com/ushios/golem)](https://goreportcard.com/report/github.com/ushios/golem) 
+[![GoDoc](https://godoc.org/github.com/ushios/golem?status.svg)](https://godoc.org/github.com/ushios/golem) [![CircleCI](https://circleci.com/gh/ushios/golem.svg?style=shield&circle-token=16878b14f171b0cd807f1ca57bde0fd6564ea1c5)](https://circleci.com/gh/ushios/golem) [![Go Report Card](https://goreportcard.com/badge/github.com/ushios/golem)](https://goreportcard.com/report/github.com/ushios/golem) [![](https://dockerbuildbadges.quelltext.eu/status.svg?organization=ushios&repository=golem)](https://hub.docker.com/r/ushios/golem/builds/) [![](https://images.microbadger.com/badges/image/ushios/golem.svg)](https://microbadger.com/images/ushios/golem "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/ushios/golem.svg)](https://microbadger.com/images/ushios/golem "Get your own version badge on microbadger.com") 
 
 Get artifacts from CircleCI
 
