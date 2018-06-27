@@ -25,6 +25,12 @@ var (
 
 func main() {
 	flag.Parse()
+
+	if *user == "" || *repo == "" || *branch == "" {
+		flag.PrintDefaults()
+		os.Exit(1)
+	}
+
 	s, err := golem.NewVersionControlSystemFromString(*vcs)
 	if err != nil {
 		log.Fatalf("faild to parse vcs name: %s", err)
