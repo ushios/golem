@@ -26,3 +26,10 @@ jobs:
           name: test
           command: |
             make test
+      - run:
+          name: make binaries
+          command: |
+            make binary
+      - store_artifacts:
+          path: bin
+          destination: bin
