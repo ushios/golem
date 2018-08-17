@@ -53,7 +53,7 @@ services:
     volumes:
       - .:/out
     command: [
-      "-prefix", "cinemastorage.proto",
+      "-prefix", "bin",
       "-output", "/out",
       "-vcs", "github",
       "-user", "ushios",
